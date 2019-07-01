@@ -1,0 +1,6 @@
+[submodule "integrate"]
+	path = integrate
+	url = git@github.com:smiet/integrate.git
+[submodule "BlenDaViz"]
+	path = code/BlenDaViz
+	url = git@github.com:SimonCan/BlenDaViz.git
