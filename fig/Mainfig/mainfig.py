@@ -21,7 +21,7 @@ code_folder = os.path.realpath(os.path.abspath(os.path.join(os.path.split(inspec
 if code_folder not in sys.path:
      sys.path.insert(0, code_folder)
 
-import Integrate as ig
+import integrate as ig
 import BlenDaViz as bz
 
 #Dipole field properties:
