@@ -1,0 +1,87 @@
+\documentclass{beamer}
+\usetheme{Pittsburgh}
+\usepackage{xcolor}
+\definecolor{orange}{RGB}{243,112,33}
+\definecolor{blue}{RGB}{0,84,150}
+\usecolortheme[named=orange]{structure}
+\setbeamercolor{normal text}{fg=blue}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage{tgbonum}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{marvosym}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{hyperref}
+\usepackage{url}
+\usefonttheme{structuresmallcapsserif}
+\usefonttheme{serif}
+\setbeamercolor{author}{fg=blue}
+\setbeamerfont{author}{size=\small}
+\setbeamerfont{frametitle}{size=\large}
+\setbeamertemplate{enumerate items}[default]
+\author{Christopher Berg Smiet, Princeton Plasma Physics Laboratory, Princeton, 08540 NJ, USA}
+\title[17pt]{Title}
+\date{}
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage[size=custom, width=100, height = 200, scale=1.4,debug]{beamerposter}
+
+\begin{document}
+
+\begin{center}
+    \begin{Huge}
+        \rule{\linewidth}{0.25cm}
+        \textsc{%textsc makes text small caps
+        \color{orange}{Magnetic Nulls from the Topological Perspective}}\\
+    \end{Huge}
+
+    \begin{large}
+        \textsc{Christopher Berg Smiet, Ben Israeli, Amitava Bhattacharjee}\\ \color{orange}{Princeton Plasma Physics Laboratory, Princeton, 08540 NJ, USA}, \color{blue}{csmiet@pppl.gov}\\
+    \end{large}
+\end{center}
+
+\begin{center}
+\rule{\linewidth}{0.3cm}
+    \begin{minipage}{0.25\linewidth}
+        \begin{Large}
+        \vspace{0.5cm}
+        ~\\
+        ~\\
+        \textsc{\color{orange}{Introduction}}\\
+        \end{Large}
+        Introductory text goes here, et cetera, et cetera, etcetera.\\
+
+
+        \begin{Large}
+        \textsc{\color{orange}{Methods}}\\
+        \end{Large}
+        Methods go here\\
+        ~\\
+    \end{minipage}
+    \hspace{1cm}
+    \begin{minipage}{0.42\linewidth}
+        \vspace{0.5cm}
+        \begin{center}
+        \begin{huge}
+        \textsc{\color{orange}{Results}\\}
+        \end{huge}
+        \end{center}
+        Results and figures go here.\\
+    \end{minipage}
+    \hspace{1cm}
+    \begin{minipage}{0.25\linewidth}
+        \vspace{0.5cm}
+        ~\\
+        \begin{Large}
+        \textsc{\color{orange}{Discussion}}\\
+        \end{Large}
+        Discussion goes here.\\
+
+        \begin{Large}
+        \textsc{\color{orange}{Literature Cited}}\\
+        \end{Large}
+        Literature cited goes here.
+    \end{minipage}
+\end{center}
+\end{document}
