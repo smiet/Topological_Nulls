@@ -59,7 +59,7 @@ for stream in istreams:
 
 vecPoints=dipole_starts[0::3] #pythonic for every third element
 for point in vecPoints:
-    bz.vec(point, ig.Dipole(point), length=.3*ig.norm(ig.Dipole(point)), color=color)
+    bz.vec(point, ig.Dipole(point), length=.1*ig.norm(ig.Dipole(point)), color=color)
 
 
 
@@ -96,5 +96,5 @@ bpy.ops.render.render(write_still=True)
 #        bz.vec(np.array((0,0,0)), fn(point), length=1, color=color, thin = 3)
 
 
-bpy.data.scenes['Scene'].render.filepath = '../fig/index_ball.png'
+bpy.data.scenes['Scene'].render.filepath = '../index_ball.png'
 bpy.ops.render.render(write_still=True)
