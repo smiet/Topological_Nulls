@@ -1,33 +1,57 @@
-\documentclass{beamer}
-\usetheme{Pittsburgh}
-\usepackage{xcolor}
-\definecolor{orange}{RGB}{243,112,33}
-\definecolor{blue}{RGB}{0,84,150}
-\usecolortheme[named=orange]{structure}
-\setbeamercolor{normal text}{fg=blue}
-\usepackage[utf8]{inputenc}
-\usepackage{mathptmx}
-\usepackage{tgbonum}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{marvosym}
-\usepackage[absolute, overlay]{textpos}
-\usepackage{hyperref}
-\usepackage{url}
-\usefonttheme{structuresmallcapsserif}
-\usefonttheme{serif}
-\setbeamercolor{author}{fg=blue}
-\setbeamerfont{author}{size=\small}
-\setbeamerfont{frametitle}{size=\large}
-\setbeamertemplate{enumerate items}[default]
-\author{Christopher Berg Smiet, Princeton Plasma Physics Laboratory, Princeton, 08540 NJ, USA}
-\title[17pt]{Title}
-\date{}
-\setbeamertemplate{navigation symbols}{}
+\documentclass[final]{beamer}
 
 \usepackage[size=custom, width=100, height = 200, scale=1.4,debug]{beamerposter}
+%\usepackage[scale=1.24]{beamerposter} % Use the beamerposter package for laying out the poster
+
+\usetheme{Pittsburgh}
+
+\definecolor{orange}{RGB}{243,112,33}
+\definecolor{blue}{RGB}{0,84,150}
+\setbeamercolor{block title}{fg=orange,bg=white} % Colors of the block titles
+\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
+\setbeamercolor{block alerted title}{fg=white,bg=dblue!70} % Colors of the highlighted block titles
+\setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
+% Many more colors are available for use in beamerthemeconfposter.sty
+
+%-----------------------------------------------------------
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\setlength{\paperwidth}{100cm} %  EPS page sizes
+\setlength{\paperheight}{200cm} %
+\setlength{\sepwid}{0.024\paperwidth} % Separation width (white space) between columns
+\setlength{\onecolwid}{0.31\paperwidth} % Width of one column
+\setlength{\twocolwid}{0.63\paperwidth} % Width of two columns
+\setlength{\topmargin}{-1.5in} % Reduce the top margin size
+%-----------------------------------------------------------
+
+\usepackage{graphicx}  % Required for including images
+\graphicspath{./fig}
+
+\usepackage{booktabs} % Top and bottom rules for tables
+
 
 \begin{document}
+
+\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+
+\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength\belowdisplayshortskip{2ex} % White space under equations
+
+\begin{frame}[t] % The whole poster is enclosed in one beamer frame
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
 
 \begin{center}
     \begin{Huge}
@@ -37,51 +61,368 @@
     \end{Huge}
 
     \begin{large}
-        \textsc{Christopher Berg Smiet, Ben Israeli, Amitava Bhattacharjee}\\ \color{orange}{Princeton Plasma Physics Laboratory, Princeton, 08540 NJ, USA}, \color{blue}{csmiet@pppl.gov}\\
+        \textsc{Christopher Berg Smiet$^{1,2,\dagger}$, Ben Israeli$^{1}$, Amitava Bhattacharjee$^{1,2}$}\\
+        \color{orange}{$^1$Princeton Plasma Physics Laboratory, Princeton, 08540 NJ, USA}, \color{blue}{$^\dagger$ csmiet@pppl.gov}\\
+    \color{orange}{$^2$Leiden University, Leiden, 2300 RA, Netherlands}\\
+
     \end{large}
 \end{center}
-
-\begin{center}
 \rule{\linewidth}{0.3cm}
-    \begin{minipage}{0.25\linewidth}
-        \begin{Large}
-        \vspace{0.5cm}
-        ~\\
-        ~\\
-        \textsc{\color{orange}{Introduction}}\\
-        \end{Large}
-        Introductory text goes here, et cetera, et cetera, etcetera.\\
 
 
-        \begin{Large}
-        \textsc{\color{orange}{Methods}}\\
-        \end{Large}
-        Methods go here\\
-        ~\\
-    \end{minipage}
-    \hspace{1cm}
-    \begin{minipage}{0.42\linewidth}
-        \vspace{0.5cm}
-        \begin{center}
-        \begin{huge}
-        \textsc{\color{orange}{Results}\\}
-        \end{huge}
-        \end{center}
-        Results and figures go here.\\
-    \end{minipage}
-    \hspace{1cm}
-    \begin{minipage}{0.25\linewidth}
-        \vspace{0.5cm}
-        ~\\
-        \begin{Large}
-        \textsc{\color{orange}{Discussion}}\\
-        \end{Large}
-        Discussion goes here.\\
 
-        \begin{Large}
-        \textsc{\color{orange}{Literature Cited}}\\
-        \end{Large}
-        Literature cited goes here.
-    \end{minipage}
-\end{center}
+
+%----------------------------------------------------------------------------------------
+
+
+\begin{columns}[t] % The whole poster consists of two major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\twocolwid} % The first column
+\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+
+\begin{column}{\onecolwid}\vspace{-.6in} % The first column within column 1 (column 1.1)
+
+%----------------------------------------------------------------------------------------
+%	THE INDEX OF A NULL
+%----------------------------------------------------------------------------------------
+
+\begin{block}{The topological Index of a 3D null}
+    Let $\mathbf{B}(\mathbf{x}): \mathbb{R}^3\rightarrow \mathbb{R}^3$ be a vector field.
+    Define the map $g:\mathbb{R}^3\rightarrow S^2$ that sends points in
+    space to the unit vectors in the direction of the field $\mathbf{B}$
+    (i.e. points on the unit sphere).
+    \begin{equation}\label{eq:director}
+        g = \frac{\mathbf{B}(\mathbf{x})}{|\mathbf{B}(\mathbf{x})|}
+    \end{equation}
+    The topological index of an isolated null $x_0$ of $\mathbf{B}$ is given by
+    the degree of the mapping $g|_{\partial D^3_{x_0}}$ restricted to the surface of
+    a solid sphere containing only the null, to the unit sphere:
+    \begin{equation}\label{eq:index1}
+        \mathrm{Ind}(\x_0)=\mathrm{Deg}(g|_{partial D^3_{x_0}})
+    \end{equation}
+    The degree of a mapping counts how many times the domain wraps around the range.
+    The degree of any map between spheres is always in
+    $\mathbb{Z}$~\cite{brouwer1911abbildung}, therefore:
+    $\mathrm{Deg}(g|_{\partial D^3})\in\mathbb{Z}$.
+    If $D^3$ contains more than one isolated zero, then the following theorem holds:
+    \begin{equation}\label{eq:indextheorem}
+        \mathrm{Deg}(g|_{\partial D^3})= \sum_{x_0\in D^3} \mathrm{Ind}(x_0)
+    \end{equation}
+    The degree is a homotopy invariant, and can be used to locate nulls in a volume by
+    bisection~\cite{greene1992locating}.
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2.1
+
+\begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
+
+%----------------------------------------------------------------------------------------
+%	METHODS
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Type-A and Type-B nulls}
+    Magnetic nulls are usually classified into Type-A (negative) or Type-B (positive)~\cite{lau1990three, parnell1996structure, greene1988geometrical}.
+    These names are derived from considering the matrix of partial derivatives of the
+    field at the null:
+    \begin{equation}\label{eq:matrix}
+        \mathsf{M}_{ij}= \partial_j B_i.
+    \end{equation}
+    Since $\nabla\cdot\mathbf{B}=0$, $\mathrm{Tr}(\mathsf{M})=0$.
+    Type-A nulls have two positive and one negative element on the diagonal, Type-B nulls
+    two negative, one positive.
+    The calculation of the topological index of Type-A and Type-B nulls with the matrices:
+    \begin{equation}
+        \mathsf{M}_A = \begin{bmatrix} 0.5 & 0&0 \\ 0 & 0.5 & 0 \\
+        0&0& -1  \end{bmatrix}.
+        \quad
+        \mathsf{M}_B = \begin{bmatrix} -0.5 & 0&0 \\ 0 & -.5 & 0 \\
+        0&0& 1  \end{bmatrix}.
+    \end{equation}
+\begin{columns}[t,totalwidth=\onecolwid] % Split up the two columns wide column
+    \begin{column}{.45\onecolwid}
+        \begin{centering}
+        \textbf{Type-A}
+        \begin{figure}
+        \includegraphics[width=.45\onecolwid]{fig/negindex_start.png}
+        \end{figure}
+        $\downarrow$
+        \begin{figure}
+        \includegraphics[width=.45\onecolwid]{fig/negindex_end.png}
+        \end{figure}
+        \end{centering}
+    \end{column}
+
+    \begin{column}{.45\onecolwid}
+        \begin{centering}
+        \textbf{Type-B}
+        \begin{figure}
+        \includegraphics[width=.45\onecolwid]{fig/posindex_start.png}
+        \end{figure}
+        $\downarrow$
+        \begin{figure}
+        \includegraphics[width=.45\onecolwid]{fig/posindex_end.png}
+        \end{figure}
+    \end{centering}
+    \end{column}
+\end{columns}
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2.2
+
+\end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
+%----------------------------------------------------------------------------------------
+%	IMPORTANT RESULT
+%----------------------------------------------------------------------------------------
+
+\begin{block}{The nulls around a dipole}
+    \begin{figure}
+        \includegraphics[width=\twocolwid]{
+    \end{figure}
+
+\end{alertblock}
+
+%----------------------------------------------------------------------------------------
+
+\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column again
+
+\begin{column}{\onecolwid} % The first column within column 2 (column 2.1)
+
+%----------------------------------------------------------------------------------------
+%	MATHEMATICAL SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Mathematical Section}
+
+Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
+
+\begin{equation}
+E = mc^{2}
+\label{eqn:Einstein}
+\end{equation}
+
+Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
+
+\begin{equation}
+\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
+\label{eq:refname}
+\end{equation}
+
+Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
+
+\begin{equation}
+\kappa =\frac{\xi}{E_{\mathrm{max}}} %\mathbb{ZNR}
+\end{equation}
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2.1
+
+\begin{column}{\onecolwid} % The second column within column 2 (column 2.2)
+
+%----------------------------------------------------------------------------------------
+%	RESULTS
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Results}
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{placeholder.jpg}
+\caption{Figure caption}
+\end{figure}
+
+Nunc tempus venenatis facilisis. Curabitur suscipit consequat eros non porttitor. Sed a massa dolor, id ornare enim:
+
+\begin{table}
+\vspace{2ex}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\midrule
+Treatment 1 & 0.0003262 & 0.562 \\
+Treatment 2 & 0.0015681 & 0.910 \\
+Treatment 3 & 0.0009271 & 0.296 \\
+\bottomrule
+\end{tabular}
+\caption{Table caption}
+\end{table}
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2.2
+
+\end{columns} % End of the split of column 2
+\end{column} % End of the first column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % Begin a column which is two columns wide (column 2)
+
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVES
+%----------------------------------------------------------------------------------------
+
+\begin{alertblock}{Objectives}
+
+Lorem ipsum dolor sit amet, consectetur, nunc tellus pulvinar tortor, commodo eleifend risus arcu sed odio:
+\begin{itemize}
+\item Mollis dignissim, magna augue tincidunt dolor, interdum vestibulum urna
+\item Sed aliquet luctus lectus, eget aliquet leo ullamcorper consequat. Vivamus eros sem, iaculis ut euismod non, sollicitudin vel orci.
+\item Nascetur ridiculus mus.
+\item Euismod non erat. Nam ultricies pellentesque nunc, ultrices volutpat nisl ultrices a.
+\end{itemize}
+
+\end{alertblock}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Introduction}
+
+Lorem ipsum dolor \textbf{sit amet}, consectetur adipiscing elit. Sed commodo molestie porta. Sed ultrices scelerisque sapien ac commodo. Donec ut volutpat elit. Sed laoreet accumsan mattis. Integer sapien tellus, auctor ac blandit eget, sollicitudin vitae lorem. Praesent dictum tempor pulvinar. Suspendisse potenti. Sed tincidunt varius ipsum, et porta nulla suscipit et. Etiam congue bibendum felis, ac dictum augue cursus a. \textbf{Donec} magna eros, iaculis sit amet placerat quis, laoreet id est. In ut orci purus, interdum ornare nibh. Pellentesque pulvinar, nibh ac malesuada accumsan, urna nunc convallis tortor, ac vehicula nulla tellus eget nulla. Nullam lectus tortor, \textit{consequat tempor hendrerit} quis, vestibulum in diam. Maecenas sed diam augue.
+
+This statement requires citation \cite{Smith:2012qr}.
+
+\end{block}
+
+%------------------------------------------------
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{placeholder.jpg}
+\caption{Figure caption}
+\end{figure}
+
+%----------------------------------------------------------------------------------------
+
+
+\begin{block}{References}
+
+\nocite{*} % Insert publications even if they are not cited in the poster
+\small{\bibliographystyle{unsrt}
+\bibliography{refs}\vspace{0.75in}}
+
+\end{block}
+
+\end{column} % End of the second column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+
+\end{columns} % End of all the columns in the poster
+
+\end{frame} % End of the enclosing frame
+
 \end{document}
+%\documentclass[final]{beamer}
+%\usetheme{Pittsburgh}
+%\usepackage{xcolor}
+%\definecolor{orange}{RGB}{243,112,33}
+%\definecolor{blue}{RGB}{0,84,150}
+%\usecolortheme[named=orange]{structure}
+%\setbeamercolor{normal text}{fg=blue}
+%\usepackage[utf8]{inputenc}
+%\usepackage{mathptmx}
+%\usepackage{tgbonum}
+%\usepackage{amssymb}
+%\usepackage{graphicx}
+%\usepackage{marvosym}
+%\usepackage[absolute, overlay]{textpos}
+%\usepackage{hyperref}
+%\usepackage{url}
+%\usefonttheme{structuresmallcapsserif}
+%\usefonttheme{serif}
+%\setbeamercolor{author}{fg=blue}
+%\setbeamerfont{author}{size=\small}
+%\setbeamerfont{frametitle}{size=\large}
+%\setbeamertemplate{enumerate items}[default]
+%\author{Christopher Berg Smiet, Princeton Plasma Physics Laboratory, Princeton, 08540 NJ, USA}
+%\title[17pt]{Title}
+%\date{}
+%\setbeamertemplate{navigation symbols}{}
+%
+%\usepackage[size=custom, width=100, height = 200, scale=1.4,debug]{beamerposter}
+%
+%\begin{document}
+%
+%
+%\begin{center}
+%    \begin{minipage}{0.75\linewidth}%left two columns
+%
+%        begin{minipage}{0.5\linewidth}%leftmost column
+%        \begin{Large}
+%        \vspace{0.5cm}
+%        ~\\
+%        ~\\
+%        \textsc{\color{orange}{Introduction}}\\
+%        \end{Large}
+%        Introductory text goes here, et cetera, et cetera, etcetera.\\
+%
+%        \begin{alertblock}{Mathematical Section}
+%
+%        Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
+%
+%        \begin{equation}
+%        E = mc^{2}
+%        \label{eqn:Einstein}
+%        \end{equation}
+%
+%        Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
+%
+%        \begin{equation}
+%        \cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
+%        \label{eq:refname}
+%        \end{equation}
+%
+%        Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
+%
+%        \begin{equation}
+%        \kappa =\frac{\xi}{E_{\mathrm{max}}} %\mathbb{ZNR}
+%        \end{equation}
+%
+%        \end{alertblock}
+%
+%        \begin{Large}
+%        \textsc{\color{orange}{Methods}}\\
+%        \end{Large}
+%        Methods go here\\
+%        ~\\
+%    \end{minipage}
+%    \hspace{1cm}
+%    \begin{minipage}{0.42\linewidth}
+%        \vspace{0.5cm}
+%        \begin{center}
+%        \begin{huge}
+%        \textsc{\color{orange}{Results}\\}
+%        \end{huge}
+%        \end{center}
+%        Results and figures go here.\\
+%    \end{minipage}
+%    \hspace{1cm}
+%    \begin{minipage}{0.25\linewidth}
+%        \vspace{0.5cm}
+%        ~\\
+%        \begin{Large}
+%        \textsc{\color{orange}{Discussion}}\\
+%        \end{Large}
+%        Discussion goes here.\\
+%
+%        \begin{Large}
+%        \textsc{\color{orange}{Literature Cited}}\\
+%        \end{Large}
+%        Literature cited goes here.
+%    \end{minipage}
+%\end{center}
+%\end{document}
