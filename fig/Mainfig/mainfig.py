@@ -41,7 +41,7 @@ streams.extend(ig.stream_multi(dipole_starts, vvfn=ig.Dipole, tol=1e-7, iterMax=
 fieldlines = []
 for stream in streams:
     if stream.sl>2:
-        fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color = (1,1,1), radius=0.01))
+        fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color = (135,206,250), radius=0.01))
 
 isotrope_starts = ig.circlePoints(np.array((0,0,1)), slide=0.05, radius=0.05, npoints=int(ncircvec/3) )
 
@@ -64,37 +64,4 @@ for point in vecPoints:
 
 
 bpy.data.scenes['Scene'].render.filepath = './mainfig.png'
-bpy.ops.render.render(write_still=True)
-
-
-
-#vecpoints = [[np.array((np.sqrt(1-z**2)*np.cos(t), np.sqrt(1-z**2)*np.sin(t), z))
-#                        for t in np.linspace(np.pi, 3*np.pi, ncircvec+1)[:ncircvec]]
-#                            for z in np.cos(np.linspace(0,np.pi,ncirc+2)[1:-1])]
-#
-#
-#
-#vecpoints.append([np.array((0,0,1))])
-#vecpoints.append([np.array((0,0,-1))])
-#
-#fn=partial(ig.ZeroField, index=-1)
-#
-#vc = cm.get_cmap('plasma', 10) # vertical colors
-#for i in range(len(vecpoints)):
-#    cdict = {'red':   [[0.0,  vc(i)[0], vc(i)[0]],
-#                       [1.0,  .5, .5]],
-#             'green': [[0.0,  vc(i)[1], vc(i)[1]],
-#                       [1.0,  .5, .5]],
-#             'blue':  [[0.0,  vc(i)[2], vc(i)[2]],
-#                       [1.0,  .5, .5]]}
-#    cmap = matplotlib.colors.LinearSegmentedColormap('map'+str(i), segmentdata=cdict)
-#    norm = plt.Normalize(vmin=0, vmax=ncircvec)
-#    s_m = plt.cm.ScalarMappable(cmap = cmap, norm = norm)
-#    for pointindex in range(len(vecpoints[i])):
-#        point=vecpoints[i][pointindex]
-#        color = s_m.to_rgba(pointindex)[:-1] # throw out the a of rgba
-#        bz.vec(np.array((0,0,0)), fn(point), length=1, color=color, thin = 3)
-
-
-bpy.data.scenes['Scene'].render.filepath = '../index_ball.png'
 bpy.ops.render.render(write_still=True)
