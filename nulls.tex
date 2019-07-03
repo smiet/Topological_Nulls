@@ -1,7 +1,6 @@
 \documentclass[final]{beamer}
 
 \usepackage[size=custom, width=100, height = 200, scale=1.4,debug]{beamerposter}
-%\usepackage[scale=1.24]{beamerposter} % Use the beamerposter package for laying out the poster
 
 \usetheme{Pittsburgh}
 
@@ -33,6 +32,7 @@
 \setlength{\topmargin}{-1.5in} % Reduce the top margin size
 %-----------------------------------------------------------
 
+\usepackage{qrcode}
 \usepackage{graphicx}  % Required for including images
 \graphicspath{./fig}
 
@@ -299,7 +299,12 @@ This statement requires citation \cite{Smith:2012qr}.
 \end{figure}
 
 %----------------------------------------------------------------------------------------
+\begin{block}{Source}
+This poster is available under the Apache licence 2.0 and all the source material is freely
+available from the Github repository at \url{https://github.com/smiet/Topological_Nulls/}.
 
+The entire poster including all rendered graphics are created by issuing the 'make' command.
+\end{block}
 
 \begin{block}{References}
 
