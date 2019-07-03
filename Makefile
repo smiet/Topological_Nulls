@@ -19,7 +19,7 @@ negindex:
 	cd fig/negindex; blender -b scene_ball_small.blend -P negindex_start.py; blender -b scene_ball_small.blend -P negindex_end.py
 
 separatrix_dipole:
-	cd fig/separatrix_dipole; blender -b scene_earth.blend -P separatrix_dipole.py
+	cd fig/separatrix_dipole; blender -b scene_earth_centered.blend -P separatrix_dipole.py
 
 hopf:
 	cd fig/hopf; blender -b scene.blend -P hopf.py

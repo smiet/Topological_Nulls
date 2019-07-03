@@ -34,27 +34,28 @@ fn = partial(ig.Dipole_guide, d=direction, strength = strength)
 
 #generate the starting points of the streamline
 nulls = ig.Dipole_nulls(strength, direction)
-npoints=50
+npoints=60
 startpoints = []
-null1 = ig.zeroPoints(nulls[0], ig.Dipole(nulls[0]), sign=1, npoints=npoints)
-null2 = ig.zeroPoints(nulls[1], ig.Dipole(nulls[1]), sign=-1, npoints=npoints)
+null1 = ig.zeroPoints(nulls[0], ig.Dipole(nulls[0]), sign=-1, npoints=npoints)
+null2 = ig.zeroPoints(nulls[1], ig.Dipole(nulls[1]), sign=1, npoints=npoints)
 
-spinestreams = []
-spinestreams.extend(ig.stream_multi(null1.forward, vvfn=fn, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='back'))
-spinestreams.extend(ig.stream_multi(null2.backward, vvfn=fn, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='back'))
 
-fanstreams = []
-fanstreams.extend(ig.stream_multi(null1.backward, vvfn=ig.Dipole, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='forward'))
-fanstreams.extend(ig.stream_multi(null2.forward, vvfn=ig.Dipole, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='forward'))
+n1fan = ig.stream_multi(null1.fanpoints, vvfn=fn, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='back')
+n1spine= ig.stream_multi(null1.fanpoints, vvfn=fn, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='forward')
+
+n2fan = ig.stream_multi(null1.backward, vvfn=fn, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='forward')
+n2spine = ig.stream_multi(null2.backward, vvfn=fn, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='back')
 
 fieldlines = []
-for stream in fanstreams:
-    if stream.sl>2:
-        fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color = (135,206,250), radius=0.01))
+for stream in n1fan:
+        fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color = (0.        , 0.37109375, 0.49609375) , radius=0.01))
+for stream in n1spine:
+        fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color = 'c', radius=0.01))
 
-for stream in fanstreams:
-    if stream.sl>2:
-        fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color = (49,99,0), radius=0.01))
+for stream in n2fan:
+        fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color =  (.639, .757, .678), radius=0.01))
+for stream in n2spine:
+        fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color = 'c', radius=0.01))
 
 
 bpy.data.scenes['Scene'].render.filepath = './mainfig.png'
