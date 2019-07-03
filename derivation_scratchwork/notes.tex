@@ -1,0 +1,39 @@
+\documentclass[12pt,a4paper,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{indentfirst}
+\usepackage{changepage}
+\usepackage[superscript,biblabel]{cite}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{float}
+
+\begin{document}
+For a magnetic field $\mathbf{B}:\mathbb{R}^3\rightarrow\mathbb{R}^3$, define the field of magnetic field directions, a map from space to the sphere, $f:\mathbb{R}^3\rightarrow S^2:x\rightarrow\frac{\mathbf{B}}{|\mathbf{B}|}$. The index of a null can be defined as the index of the map from a surface enclosing the null to $S^2$ via $f$. This can be extended to a surface enclosing several nulls. We would like to construct a vector field, that when integrated over this surface, gives the sum of the indices of the enclosed nulls. We define this by pulling back via $f$ the integration over $S^2$ used to define the index to an integral over a surface in $\mathbb{R}^3$.\\
+$$4\pi\sum_{x_i\in U}\mathrm{Ind}(x_i)=\int_{f_*\partial U}\omega=\int_{f_*\partial U}d\alpha d\beta J(\alpha,\beta)=\int_{\partial U}dxdy
+\begin{vmatrix}
+  \partial_x\alpha & \partial_y \beta \\
+  \partial_y\alpha & \partial_y \beta
+\end{vmatrix}
+J(\alpha,\beta)$$
+$$=\int_{\partial U}f^*\omega=\int_{\partial U}v\cdot da$$
+Here we have taken some coordinates $(\alpha,\beta)$ on $S^2$, for which the area two-form on $S^2$ becomes $d\alpha\wedge d\beta J(\alpha,\beta)$. We find that the vector field, which we call the isotrope field, is the Hodge dual of the pullback over $f$ of the area two-form on $S^2$,
+$$v=\star f^*\omega$$
+for which we can find an expression in terms of our coordinates on $S^2$ as functions of $R^3$ defined by $f(x)=(\alpha(x),\beta(x))$. For any two vectors $a,b$:
+$$v\cdot(a\times b)=f^*\omega(a,b)=
+\begin{vmatrix}
+  \partial_x\alpha & \partial_y \beta \\
+  \partial_y\alpha & \partial_y \beta
+\end{vmatrix}
+J(\alpha,\beta)=(\nabla\alpha\times\nabla\beta)\cdot(a\times b)J(\alpha,\beta)$$\\
+So $v$ can be written as:
+$$v=(\nabla\alpha\times\nabla\beta)J(\alpha,\beta)$$
+We can immediately see that $f$ is constant on streamlines of $v$, so the streamlines of $v$ are by definition the previously defined isotropes of $\mathbf{B}$.
+$$v\perp\nabla\alpha,\nabla\beta\Rightarrow\partial_v\vec f=0$$
+If we choose the usual angular coordinates on the sphere, $(\alpha,\beta)\Rightarrow(\theta,\phi)$, then
+$$v=(\nabla\theta\times\nabla\phi)\sin\phi$$
+\end{document}

@@ -1,0 +1,14 @@
+\documentclass[12pt,a4paper,oneside,twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{indentfirst}
+\usepackage{changepage}
+\usepackage[superscript,biblabel]{cite}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{float}
+
