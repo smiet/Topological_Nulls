@@ -28,7 +28,7 @@
 \setlength{\paperheight}{200cm} %
 \setlength{\sepwid}{0.024\paperwidth} % Separation width (white space) between columns
 \setlength{\onecolwid}{0.31\paperwidth} % Width of one column
-\setlength{\twocolwid}{0.63\paperwidth} % Width of two columns
+\setlength{\twocolwid}{0.62\paperwidth} % Width of two columns
 \setlength{\topmargin}{-1.5in} % Reduce the top margin size
 %-----------------------------------------------------------
 
@@ -93,7 +93,10 @@
 	We present a novel method of conceptualizing the movement of these nulls in
 	three-dimensional fields. 
 	We define the concept of isotropes (iso=same, tropos = direction), lines in space
-	where the magnetic field points in the same direction. 
+	along which the magnetic field points in the same direction. 
+	It is shown that the isotropes can be recovered as the stream lines of
+	the isotropic field, which is defined via a geometric formula from the
+	magnetic field.
 	
 \end{block}
 
@@ -124,7 +127,9 @@
     The degree is a homotopy invariant, and can be used to locate nulls in a volume by
     bisection~\cite{greene1992locating}.
 
-\end{block}
+\end{block}It is shown that the isotropes can 
+be recovered as the stream lines of the isotropic field, which is defined 
+via a geometric formula from the magnetic field.
 
 %----------------------------------------------------------------------------------------
 
@@ -165,6 +170,7 @@
         \begin{figure}
         \includegraphics[width=.45\onecolwid]{fig/negindex_end.png}
         \end{figure}
+        \hfil$\mathrm{Ind}(x_0)=-1 \leqno$\hfil
         \end{centering}
     \end{column}
 
@@ -178,6 +184,7 @@
         \begin{figure}
         \includegraphics[width=.45\onecolwid]{fig/posindex_end.png}
         \end{figure}
+        \hfil$\mathrm{Ind}(x_0)=+1 \leqno$\hfil
     \end{centering}
     \end{column}
 \end{columns}
@@ -216,7 +223,6 @@
 \end{block}
 
 %----------------------------------------------------------------------------------------
-
 \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column again
 
 \begin{column}{\onecolwid} % The first column within column 2 (column 2.1)
@@ -224,29 +230,39 @@
 %----------------------------------------------------------------------------------------
 %	MATHEMATICAL SECTION
 %----------------------------------------------------------------------------------------
+\begin{block}{Movement of nulls}
+    A topological null of index $\pm 1$ cannot be removed unless it meets with a null of opposite index. 
+    The change of the magnetic field at the location of the null can be evaluated through:
+    \begin{equation}
+        \frac{\partial \mathbf{B}}{\partial t} = \eta \nabla^2 \mathbf{B}.
+    \end{equation}
+    This vector equation gives the rate and direction of change of the field at the null.
+    After a finite time the field has changed, and this can be seen as adding a guide
+    field in this direction to the field of the null at time 0. 
+    The null will move along the isotrope corresponding to this direction.
 
-\begin{block}{Mathematical Section}
+\end{block}
 
-Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
 
-\begin{equation}
-E = mc^{2}
-\label{eqn:Einstein}
-\end{equation}
+\begin{block}{Topological attraction and repulsion}
+    Nulls with index $n$ higher than 1 or lower than -1 are very unstable.  The degree of
+    the mapping $g|_\partial D^3_{x_0}$ is $n$, therefore $S^2$, the space of
+    directions is multiply covered for any ball enclosing $x_0$. 
+    This means that for any direction $|n|$ isotropes approach the null arbitrarily
+    closely. 
 
-Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
+    Any change in the field at the location of the null can be seen as 
+    adding a guide field to it. 
+    This change will split up the null into $|n|$ copies of the nulls moving along the
+    isotropes of the direction of the change. 
 
-\begin{equation}
-\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
-\label{eq:refname}
-\end{equation}
-
-Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
-
-\begin{equation}
-\kappa =\frac{\xi}{E_{\mathrm{max}}} %\mathbb{ZNR}
-\end{equation}
-
+    When two nulls of opposite index are close, the isotropes leaving the null of positive
+    index enter the null of negative index. 
+    If there are only two nulls, and the field at sufficient distance is a constant field,
+    then every isotrope except the one corresponding to opposite the field at infinity
+    will leave one null and enter the other. 
+    Any guide field (except the one mentioned above) will move the nulls along the
+    corresponding isotrope until they meet. 
 \end{block}
 
 %----------------------------------------------------------------------------------------
@@ -256,9 +272,19 @@ Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sol
 \begin{column}{\onecolwid} % The second column within column 1 (column 1.2)
 
 %----------------------------------------------------------------------------------------
-%	RESULTS
+%	Dipole in a guide field
 %----------------------------------------------------------------------------------------
+\begin{block}{The Dipole in a guide field}
+    \begin{figure}
+    \includegraphics[width=\onecolwid]{fig/separatrix_dipole.png}
+    \end{figure}
 
+    The magnetic field of a dipole embedded in a guide field of direction $(-1,0,-1)$ is
+    shown in the figure above. 
+    The spines are colored cyan, whereas the spines are colored dark and light blue. 
+
+
+\end{block}
 
 %----------------------------------------------------------------------------------------
 
@@ -277,9 +303,21 @@ Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sol
 %----------------------------------------------------------------------------------------
 
 \begin{block}{The Isotropic field}
-    The function $g:\mathbb{R}^3\rightarrow S^2$ used to calculate the topological index
+    The function $g:\mathbb{R}^3\rightarrow S^2$ 
     is a mapping from a 3-dimensional space to a two-dimensional space.
-    The:
+    At any point in $\mathbb{R}^3$ (with exeption of null points and singularities), 
+    there is a there is a direction in which the direction
+    of the magnetic field remains constant. 
+    We call these lines the isotropes of the magnetic field. 
+    These lines cannot start or end, except at nulls. 
+
+    Since the index of a null equals the degree of the mapping of $g|_\partial D^3_{x_0}$, 
+    this means that at a null of index $\pm 1$, at least one isotrope corresponding to every
+    direction is present on the surface of $D^3_{x_0}$. 
+    Since this index theorem holds for any volume that encloses the null, these isotropes
+    approach the null arbitrarily closely. 
+    The isotropes  
+    
 
 
 \end{block}
@@ -287,29 +325,92 @@ Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sol
 
 \begin{block}{Calculating the Isotropic field}
 
-For a magnetic field $\mathbf{B}:\mathbb{R}^3\rightarrow\mathbb{R}^3$, define the field of magnetic field directions, a map from space to the sphere, $f:\mathbb{R}^3\rightarrow S^2:x\rightarrow\frac{\mathbf{B}}{|\mathbf{B}|}$. The index of a null can be defined as the index of the map from a surface enclosing the null to $S^2$ via $f$. This can be extended to a surface enclosing several nulls. We would like to construct a vector field, that when integrated over this surface, gives the sum of the indices of the enclosed nulls. We define this by pulling back via $f$ the integration over $S^2$ used to define the index to an integral over a surface in $\mathbb{R}^3$.\\
-$$4\pi\sum_{x_i\in U}\mathrm{Ind}(x_i)=\int_{f_*\partial U}\omega=\int_{f_*\partial U}d\alpha d\beta J(\alpha,\beta)=\int_{\partial U}dxdy
+The index of a null can be defined as the index of the map from a surface
+enclosing the null to $S^2$ via $g$. This can be extended to a surface
+enclosing several nulls. We would like to construct a vector field,
+that when integrated over this surface, gives the sum of the indices of
+the enclosed nulls. We define this by pulling back via $g$ the
+integration over $S^2$ used to define the index to an integral over a
+surface in $\mathbb{R}^3$.\\
+	\begin{multline}
+		4\pi\sum_{x_i\in U}\mathrm{Ind}(x_i)=\int_{g_*\partial U}\omega=\int_{g_*\partial U}d\alpha d\beta J(\alpha,\beta)\\
+		=\int_{\partial U}dxdy
 \begin{vmatrix}
   \partial_x\alpha & \partial_y \beta \\
   \partial_y\alpha & \partial_y \beta
 \end{vmatrix}
-J(\alpha,\beta)$$
-$$=\int_{\partial U}f^*\omega=\int_{\partial U}v\cdot da$$
-Here we have taken some coordinates $(\alpha,\beta)$ on $S^2$, for which the area two-form on $S^2$ becomes $d\alpha\wedge d\beta J(\alpha,\beta)$. We find that the vector field, which we call the isotrope field, is the Hodge dual of the pullback over $f$ of the area two-form on $S^2$,
-$$v=\star f^*\omega$$
-for which we can find an expression in terms of our coordinates on $S^2$ as functions of $R^3$ defined by $f(x)=(\alpha(x),\beta(x))$. For any two vectors $a,b$:
-$$v\cdot(a\times b)=f^*\omega(a,b)=
+	J(\alpha,\beta)\\
+=\int_{\partial U}g^*\omega=\int_{\partial U}v\cdot da
+	\end{multline}
+Here we have taken some coordinates $(\alpha,\beta)$ on $S^2$, for which the
+	area two-form on $S^2$ becomes $d\alpha\wedge d\beta J(\alpha,\beta)$.
+	We find that the vector field, which we call the isotrope field, is the
+	Hodge dual of the pullback over $f$ of the area two-form on $S^2$,
+	\begin{equation}
+		v=\star g^*\omega
+	\end{equation}
+for which we can find an expression in terms of our coordinates on $S^2$ as functions of
+	$R^3$ defined by $g(x)=(\alpha(x),\beta(x))$. For any two vectors $a,b$:
+	\begin{multline}
+		v\cdot(a\times b)=g^*\omega(a,b)=
 \begin{vmatrix}
   \partial_x\alpha & \partial_y \beta \\
   \partial_y\alpha & \partial_y \beta
 \end{vmatrix}
-J(\alpha,\beta)=(\nabla\alpha\times\nabla\beta)\cdot(a\times b)J(\alpha,\beta)$$\\
+J(\alpha,\beta)\\
+		=(\nabla\alpha\times\nabla\beta)\cdot(a\times b)J(\alpha,\beta)
+	\end{multline}
 So $v$ can be written as:
-$$v=(\nabla\alpha\times\nabla\beta)J(\alpha,\beta)$$
-We can immediately see that $f$ is constant on streamlines of $v$, so the streamlines of $v$ are by definition the previously defined isotropes of $\mathbf{B}$.
-$$v\perp\nabla\alpha,\nabla\beta\Rightarrow\partial_v\vec f=0$$
+	\begin{equation}
+		v=(\nabla\alpha\times\nabla\beta)J(\alpha,\beta)
+	\end{equation}
+We can immediately see that $g$ is constant on streamlines of $v$, so the streamlines of $v$ are by definition the previously defined isotropes of $\mathbf{B}$.
+	\begin{equation}
+		v\perp\nabla\alpha,\nabla\beta\Rightarrow\partial_v\vec g=0
+	\end{equation}
 If we choose the usual angular coordinates on the sphere, $(\alpha,\beta)\Rightarrow(\theta,\phi)$, then
-$$v=(\nabla\theta\times\nabla\phi)\sin\phi$$
+	\begin{equation}
+		v=(\nabla\theta\times\nabla\phi)\sin\phi
+	\end{equation}
+
+    The Isotrope field is directed away from nulls of index $+1$ and towards nulls of
+    index $-1$.
+    In this sense the Isotrope field is analogous to the electric field of  point charges, and it's
+    integral over a surface calculates the topological charge enclosed.
+
+
+
+\end{block}
+
+\begin{block}{Isotropes of a localized field embedded in a guide field}
+    A localized magnetic field is a field generated by some local current distribution
+    that goes to zero sufficiently rapidly at infinity. 
+    Examples include the dipole field of a planet or star, or the currents carried by the
+    plasma in an FRC. 
+    Such local configurations are often embedded in a guide field, such as the
+    interplanetary or galactic magnetic field, or the field produced by external coils in
+    the case of the FRC. 
+
+    The question then is, where and what types of nulls exist in this configuration of
+    local field plus guide field. 
+    At sufficient distance, the guide field is stronger than the local field, and the
+    mapping of $g$ from the surface of a sufficiently large ball $D^3$ reduces to a null-homotopic
+    function (degree 0).
+    The indices of the nulls enclosed in this ball must therefore always sum to zero. 
+
+    The isotropes of a local field
+    constitute lines, which cannot end, and must therefore continue to infinity. 
+    When the local field is placed in a guide field (direct sum of the two fields), the
+    nulls appear on the isotrope corresponding with the direction opposite to the
+    direction of the guide field. 
+    The two fields sum to zero where the local field has equal magnitude to the guide
+    field. 
+    Surfaces of constant field strength are compact and closed, and the isotrope pierces
+    them an even number of times, resulting in nulls of index +1 where the isotrope
+    enters, and -1 where the isotrope leaves. 
+    
+
+
 
 
 \end{block}
