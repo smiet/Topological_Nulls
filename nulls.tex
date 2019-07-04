@@ -56,7 +56,7 @@
 \begin{center}
     \begin{Huge}
         \rule{\linewidth}{0.25cm}
-        \textsc{%textsc makes text small caps
+        \textsc{%textsc makes text small capsx1%aQ$&kSPmV
         \color{orange}{Magnetic Nulls from the Topological Perspective}}\\
     \end{Huge}
 
@@ -87,6 +87,16 @@
 %----------------------------------------------------------------------------------------
 %	THE INDEX OF A NULL
 %----------------------------------------------------------------------------------------
+\begin{block}{Introduction}
+	Three-dimensional magnetic nulls play an important role in astrophysical
+	plasma physics and earth-based fusion concepts such as the FRC. 
+	We present a novel method of conceptualizing the movement of these nulls in
+	three-dimensional fields. 
+	We define the concept of isotropes (iso=same, tropos = direction), lines in space
+	where the magnetic field points in the same direction. 
+	
+\end{block}
+
 
 \begin{block}{The topological Index of a 3D null}
     Let $\mathbf{B}(\mathbf{x}): \mathbb{R}^3\rightarrow \mathbb{R}^3$ be a continuous
@@ -180,14 +190,29 @@
 
 \end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
 %----------------------------------------------------------------------------------------
-%	IMPORTANT RESULT
+%	THE NULLS AROUND A DIPOLE
 %----------------------------------------------------------------------------------------
 
-\begin{block}{The nulls around a dipole}
+\begin{block}{The Isotropes of a dipole}
+    A dipole field has topological index 0, and its isotropes are straight lines passing through
+	the singularity of the dipole. 
+	The image below shows the magnetic field lines of a dipole given by
+	\begin{equation}
+		\mathbf{B} = \frac{2(\mathbf{m}\cdot\hat{\mathbf{r}})\hat{\mathbf{r}}-\mathbf{m}}
+		{r^3}
+	\end{equation}
+	where $\mathbf{m}$ is the dipole moment given by a unit vector in the
+	$\hat{z}$-direction. 
+	The magnetic field lines are given by the blue curves
+	Seven isotropes are shown in different colors, with a vector indicating the diretion of the
+	isotrope. 
     \begin{figure}
         \includegraphics[width=\twocolwid]{fig/mainfig.png}
     \end{figure}
-
+	The surfaces of constant field strength enclose the dipole. 
+	Whenever a dipole is embedded in a guide field, two nulls appear where the isotrope of
+	opposite direction to the guide field intersects the surface of constant magnitude
+	equal to the guide field strength. 
 \end{block}
 
 %----------------------------------------------------------------------------------------
@@ -228,7 +253,7 @@ Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sol
 
 \end{column} % End of column 2.1
 
-\begin{column}{\onecolwid} % The second column within column 2 (column 2.2)
+\begin{column}{\onecolwid} % The second column within column 1 (column 1.2)
 
 %----------------------------------------------------------------------------------------
 %	RESULTS

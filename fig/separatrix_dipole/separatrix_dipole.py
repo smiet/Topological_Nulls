@@ -40,11 +40,11 @@ null1 = ig.zeroPoints(nulls[0], ig.Dipole(nulls[0]), sign=-1, npoints=npoints)
 null2 = ig.zeroPoints(nulls[1], ig.Dipole(nulls[1]), sign=1, npoints=npoints)
 
 
-n1fan = ig.stream_multi(null1.fanpoints, vvfn=fn, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='back')
-n1spine= ig.stream_multi(null1.fanpoints, vvfn=fn, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='forward')
+n1spine = ig.stream_multi(null1.fanpoints, vvfn=fn, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='back')
+n1fan = ig.stream_multi(null1.fanpoints, vvfn=fn, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='forward')
 
-n2fan = ig.stream_multi(null1.backward, vvfn=fn, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='forward')
-n2spine = ig.stream_multi(null2.backward, vvfn=fn, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='back')
+n2spine = ig.stream_multi(null2.fanpoints, vvfn=fn, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='forward')
+n2fan = ig.stream_multi(null2.fanpoints, vvfn=fn, tol=1e-7, iterMax=300000,  hMin=2e-6, lMax = 100, intdir='back')
 
 fieldlines = []
 for stream in n1fan:
@@ -58,5 +58,5 @@ for stream in n2spine:
         fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color = 'c', radius=0.01))
 
 
-bpy.data.scenes['Scene'].render.filepath = './mainfig.png'
+bpy.data.scenes['Scene'].render.filepath = '../separatrix_dipole.png'
 bpy.ops.render.render(write_still=True)
