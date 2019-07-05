@@ -1,10 +1,12 @@
-default:   beamer
+default:   images poster
 
-beamer:
+poster:
 	pdflatex -synctex=1 -interaction=nonstopmode -enable-write18 nulls.tex
 	bibtex nulls
 	pdflatex -synctex=1 -interaction=nonstopmode  -enable-write18 nulls.tex
 	pdflatex -synctex=1 -interaction=nonstopmode -enable-write18 nulls.tex
+
+images: indexFig mainfig posindex negindex separatrix_dipole
 
 indexFig:
 	cd fig/indexFig; blender -b  scene_lowres.blend -P 3d_lines.py 
@@ -21,9 +23,4 @@ negindex:
 separatrix_dipole:
 	cd fig/separatrix_dipole; blender -b scene_earth_centered.blend -P separatrix_dipole.py
 
-hopf:
-	cd fig/hopf; blender -b scene.blend -P hopf.py
-
-hopf_isotropes:
-	cd fig/hopf_isotropes; blender -b scene.blend -p hopfisotropes.py
 
