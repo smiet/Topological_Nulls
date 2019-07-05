@@ -6,10 +6,8 @@ poster:
 	pdflatex -synctex=1 -interaction=nonstopmode  -enable-write18 nulls.tex
 	pdflatex -synctex=1 -interaction=nonstopmode -enable-write18 nulls.tex
 
-images: indexFig mainfig posindex negindex separatrix_dipole
+images:  mainfig posindex negindex separatrix_dipole
 
-indexFig:
-	cd fig/indexFig; blender -b  scene_lowres.blend -P 3d_lines.py 
 
 mainfig:
 	cd fig/Mainfig; blender -b scene_earth.blend -P mainfig.py

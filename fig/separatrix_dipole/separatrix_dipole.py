@@ -1,12 +1,12 @@
-# mainfig.py: Illustration of the main idea of the isotrope field:
-# Several streamlines of a dipole field is shown, with an earth at the center, and
-# a few isotrope lines are drawn as well.
+# separatrix_dipole.py: creates the field lines of a dipole in a constant guide field. 
+#
 #
 # All the field lines and vectors are calculated in this script, but the final product
-# relies on some objects already being present in the .blend file (the earth, the semi-transparent
-# sphere, and the plane). This could in principle also be coded, but alas, no time!
+# relies on some objects already being present in the .blend file (the earth)
 #
-# coded by Christopher Berg Smiet on July 01
+#To change the angle and strength of the guide field change the variables on lines 30-31
+#
+# coded by Christopher Berg Smiet on July 03
 # Csmiet@pppl.gov
 #
 import os, sys, inspect       # For importing the submodules in a platform-independend robust way
@@ -50,12 +50,12 @@ fieldlines = []
 for stream in n1fan:
         fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color = (0.        , 0.37109375, 0.49609375) , radius=0.01))
 for stream in n1spine:
-        fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color = 'c', radius=0.01))
+        fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color = 'r', radius=0.01))
 
 for stream in n2fan:
         fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color =  (.639, .757, .678), radius=0.01))
 for stream in n2spine:
-        fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color = 'c', radius=0.01))
+        fieldlines.append(bz.plot(stream.x, stream.y, stream.z, color = 'r', radius=0.01))
 
 
 bpy.data.scenes['Scene'].render.filepath = '../separatrix_dipole.png'
