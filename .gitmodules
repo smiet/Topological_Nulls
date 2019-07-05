@@ -1,6 +1,6 @@
 [submodule "BlenDaViz"]
 	path = code/BlenDaViz
-	url = https://@github.com:SimonCan/BlenDaViz.git
+	url = https://github.com:SimonCan/BlenDaViz.git
 [submodule "code/integrate"]
 	path = code/integrate
-	url = https://@github.com:smiet/integrate.git
+	url = https://github.com:smiet/integrate.git
