@@ -2,17 +2,15 @@
 
 Code to completely generate the poster: 'Magnetic Nulls from the Topological Perspective' presented ad EPS2019 by Chris Smiet et al. 
 
-Prerequisites: Blender, LaTeX. 
+Prerequisites: Blender, LaTeX (including the LaTeX packages: qrcode, beamer, beamerposter)
 
 
 Setup: 
-download this repo *recursively* (BlendaViz: 
-git clone --recurse-submodules git@github.com:smiet/Topological_Nulls.git
+download this repo *recursively* 
 Install Blender. 
-Find out where on your filesystem Blender has their configuration files (f.ex.:~/.config/blender/2.79/scripts/modules) 
-Tell blender where to find the code: 
-$cd [path-to-blender-config]/scripts/addons/modules
-(in that folder link to the needed codes:)
-ln -s [path-to-this-repo]/code/BlenDaViz
-ln -s [path-to-this-repo]/code/integrate
-ln -s [path-to-this-repo]/code/functions
+  $ > git clone --recurse-submodules git@github.com:smiet/Topological_Nulls.git
+  $ > make
+
+
+As of the current version I am unable to link the earth image texture to the object, this must be done by hand in blender. 
+Open the scene_earth.blend in the respective image folders in blender, and link to the texture in /fig/scenes/earth.jpg.
