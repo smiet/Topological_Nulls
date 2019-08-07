@@ -6,10 +6,10 @@ Prerequisites: Blender, LaTeX (including the LaTeX packages: qrcode, beamer, bea
 
 
 Setup: 
-download this repo *recursively* 
-Install Blender. 
-  $ > git clone --recurse-submodules git@github.com:smiet/Topological_Nulls.git
-  $ > make
+download this repo *recursively* \n
+Install Blender. \n
+  $ > git clone --recurse-submodules git@github.com:smiet/Topological_Nulls.git \n
+  $ > make \n
 
 
 As of the current version I am unable to link the earth image texture to the object, this must be done by hand in blender. 
