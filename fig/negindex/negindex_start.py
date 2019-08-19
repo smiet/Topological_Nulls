@@ -49,7 +49,7 @@ streams = ig.stream_multi(streampoints, vvfn=fn, tol=1e-7, iterMax=1000000, intd
 lines = []
 for stream in streams:
     print('plotting stream...')
-    lines.append(bz.plot(stream.x, stream.y, stream.z, color = (1,1,1), radius=0.01))
+    lines.append(bz.plot(stream.x, stream.y, stream.z, color = (1,1,1,1), radius=0.01))
 
 vecs = []
 vc = cm.get_cmap('plasma', 10) # vertical colors
@@ -65,7 +65,7 @@ for num1, veccirc in enumerate(vecpoints):
     s_m = plt.cm.ScalarMappable(cmap = cmap, norm = norm)
     for num2, point in enumerate(veccirc):
         #print(num2,point)
-        color = s_m.to_rgba(num2)[:-1] # throw out the a of rgba
+        color = s_m.to_rgba(num2)[:] # throw out the a of rgba
         vecs.append(bz.vec(point, fn(point), length=3*ig.norm(fn(point)), color=color))
 
 

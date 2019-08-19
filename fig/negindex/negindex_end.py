@@ -60,7 +60,7 @@ for i in range(len(vecpoints)):
     s_m = plt.cm.ScalarMappable(cmap = cmap, norm = norm)
     for pointindex in range(len(vecpoints[i])):
         point=vecpoints[i][pointindex]
-        color = s_m.to_rgba(pointindex)[:-1] # throw out the a of rgba
+        color = s_m.to_rgba(pointindex)[:] # throw out the a of rgba
         vecs.append(bz.vec(np.array((0,0,0)), fn(point), length=1, thin=3, color=color))
 
 
